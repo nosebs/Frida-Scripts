@@ -14,17 +14,6 @@ var Hook = {
   },
 }
 
-function toast(toastText) {	
-	Java.perform(function() { 
-		var context = Java.use('android.app.ActivityThread').currentApplication().getApplicationContext();
-
-		Java.scheduleOnMainThread(function() {
-				var toast = Java.use("android.widget.Toast");
-				toast.makeText(context, Java.use("java.lang.String").$new(toastText), 1).show();
-		});
-	});
-}
-
 rpc.exports = {
   init: function (stage, options) {
     setTimeout(function() {
